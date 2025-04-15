@@ -1,4 +1,5 @@
-Afrom django.db import models
+from django.db import models
+
 
 class student(models.Model):
 	cName = models.CharField(max_length=20, null=False)
