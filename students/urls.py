@@ -8,4 +8,5 @@ urlpatterns = [
     path('listall/', views.listall, name='listall'),
     path('', views.index, name='home'),
     path('index/', views.index, name='index'),
+    path('init/', views.initdata, name='init'),  
 ]
