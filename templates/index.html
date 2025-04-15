@@ -1,20 +1,22 @@
-{% extends 'base.html' %}
-{% block title %}<title>顯示所有資料</title>{% endblock %}
-{% block content %}
-<h2 align="left">顯示 student 資料表所有資料</h2>
-<table border="1" cellpadding="0" cellspacing="0">
-	<th>編號</th><th>姓名</th><th>性別</th><th>生日</th>
-	<th>郵件帳號</th><th>電話</th><th>地址</th>
-	{% for student in students %}
-		<tr>
-			<td>{{ student.id }} </td>
-			<td>{{ student.cName }} </td>
-			<td>{{ student.cSex}} </td>
-			<td>{{ student.cBirthday }} </td>
-			<td>{{ student.cEmail }} </td>
-			<td>{{ student.cPhone}} </td>
-			<td>{{ student.cAddr }} </td>	
-		</tr>
-	{% endfor %}
-</table>
-{% endblock %}	
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>學生資料首頁</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>學生資料管理系統</h1>
+        <div style="text-align:center; margin-top: 30px;">
+            <a href="{% url 'listall' %}">
+                <button style="padding: 10px 20px; font-size: 16px;">顯示所有學生資料</button>
+            </a>
+            <a href="{% url 'listone' %}">
+                <button style="padding: 10px 20px; font-size: 16px; margin-left: 20px;">顯示林宸宇資料</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
